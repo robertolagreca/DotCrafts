@@ -1,0 +1,33 @@
+﻿@page
+@using DotCrafts.Components
+@model IndexModel
+@{
+	ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+	<h1 class="display-4">Dot Crafts</h1>
+	<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<!--Link with blazor framework/js and waiting to render ProductList.razor from Componets-->
+@(await Html.RenderComponentAsync<ProductList>(RenderMode.ServerPrerendered))
+<script src="_framework/blazor.server.js"></script>
+
+<!--Now made it with blazor, see Components folder-->
+@*<div class="container">
+	<div class="text-center card-columns">
+		<div class="row">
+			@foreach (var product in Model.Products)
+			{
+				<div class="card mx-auto" style="width: 25rem;">
+					<div class="card-img" style="background-image: url('@product.Image');">
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">@product.Title</h5>
+					</div>
+				</div>
+			}
+		</div>
+	</div>
+</div>*@
